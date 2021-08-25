@@ -149,7 +149,7 @@ img {
 
 /* --------------section title page------------- */
 
-.title-section {
+.section.title-section {
   background-color: var(--second-background-color);
   padding-top: 200px;
   padding-bottom: 200px;
