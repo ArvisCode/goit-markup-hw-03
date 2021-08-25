@@ -1,3 +1,5 @@
+/* -------------global------------- */
+
 :root {
   --main-background-color: #ffffff;
   --second-background-color: #2f303a;
@@ -22,12 +24,28 @@ body {
   color: var(--main-text-color);
 }
 
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
 .list {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .link {
   text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
 .visually-hidden {
@@ -41,7 +59,43 @@ body {
   clip: rect(0 0 0 0);
 }
 
+.section {
+  width: 1600px;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.flex {
+  display: flex;
+}
+
+.list-item {
+  margin: 0 30px;
+}
+
 /* -------------header------------- */
+
+.header {
+  padding-top: 24px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ececec;
+}
+
+.header-container {
+  justify-content: space-between;
+}
+
+.nav-item,
+.header-contact {
+  padding-left: 50px;
+}
 
 .logo {
   font-family: Raleway;
@@ -50,7 +104,10 @@ body {
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--logo-color);
+
+  padding-left: 15px;
 }
+
 .header-logo {
   color: var(--header-second-logo-color);
 }
@@ -80,6 +137,11 @@ body {
   color: var(--accent-color);
 }
 
+.contact-list {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .header-contact:hover,
 .header-contact:focus {
   color: var(--accent-color);
@@ -92,11 +154,17 @@ body {
 }
 
 .main-title {
-  font-family: Roboto;
   font-weight: 900;
-  font-size: 1.36;
+  font-size: 44px;
+  line-height: 1.36;
   letter-spacing: 0.06em;
   color: var(--main-title-color);
+
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  padding-bottom: 50px;
 }
 
 .title-button {
@@ -110,6 +178,9 @@ body {
   background-color: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+
+  margin: 0 auto;
+  padding: 10px 32px;
 }
 
 .title-button:focus,
@@ -126,6 +197,8 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--second-title-color);
+
+  padding-bottom: 10px;
 }
 
 .advantages-text {
@@ -143,16 +216,33 @@ body {
   line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--second-title-color);
+  text-align: center;
+
+  padding-bottom: 50px;
 }
 
 /* --------------section team------------- */
 
-.team-title {
+.team {
+  background-color: #f5f4fa;
+}
+
+.team-item {
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team-main-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--second-title-color);
+  text-align: center;
+
+  padding-bottom: 50px;
 }
 
 .team-second-title {
@@ -162,6 +252,9 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--second-title-color);
+
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
 .team-text {
@@ -170,16 +263,26 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--main-text-color);
+
+  padding-bottom: 30px;
 }
 
 /* --------------footer------------- */
 
 .footer {
   background-color: var(--second-background-color);
+
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .footer-logo {
   color: var(--footer-second-logo-color);
+}
+
+.address-list {
+  padding-top: 20px;
+  padding-left: 15px;
 }
 
 .footer-addres-link {
@@ -198,7 +301,33 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.footer-item {
+  margin-bottom: 9px;
+}
+
 /* --------------portfolio------------- */
+
+.filter {
+  padding-bottom: 50px;
+
+  justify-content: center;
+}
+
+.portfolio-button {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #212121;
+
+  background: #f5f4fa;
+  border-radius: 4px;
+
+  padding: 6px 22px;
+  margin-left: 30px;
+}
 
 .portfolio-button:focus,
 .portfolio-button:hover {
@@ -207,12 +336,31 @@ body {
   cursor: pointer;
 }
 
+.gallery {
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.gallery-div {
+  border-left: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  box-sizing: border-box;
+
+  padding: 20px 24px;
+}
+
 .gallery-name {
-  font-weight: bold;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--second-title-color);
+
+  padding-bottom: 4px;
 }
 
 .gallery-text {
