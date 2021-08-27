@@ -28,24 +28,30 @@ h1,
 h2,
 h3,
 p {
+  text-decoration: none;
   margin: 0;
   padding: 0;
 }
 
 img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
-.list {
+ul,
+li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.link {
+ul {
+  display: flex;
+}
+
+a {
   text-decoration: none;
-  margin: 0;
-  padding: 0;
 }
 
 .visually-hidden {
@@ -60,7 +66,6 @@ img {
 }
 
 .section {
-  width: 1600px;
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -72,14 +77,6 @@ img {
   padding-right: 15px;
 }
 
-.flex {
-  display: flex;
-}
-
-.list-item {
-  margin-right: 30px;
-}
-
 /* -------------header------------- */
 
 .header {
@@ -89,12 +86,19 @@ img {
 }
 
 .header-container {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.nav-item,
-.header-contact {
-  padding-left: 50px;
+.nav-link,
+.contact-link {
+  padding: 20px 0; /*расширяем область кликабельности*/
+}
+
+.nav-item:not(:first-child),
+.contact-item:not(:first-child) {
+  margin-left: 50px;
 }
 
 .logo {
@@ -104,8 +108,6 @@ img {
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--logo-color);
-
-  padding-left: 15px;
 }
 
 .header-logo {
@@ -124,7 +126,7 @@ img {
   color: var(--accent-color);
 }
 
-.header-contact {
+.contact-link {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -142,20 +144,20 @@ img {
   margin-bottom: 0;
 }
 
-.header-contact:hover,
-.header-contact:focus {
+.contact-link:hover,
+.contact-link:focus {
   color: var(--accent-color);
 }
 
-/* --------------section title page------------- */
+/* --------------section hero------------- */
 
-.section.title-section {
+.hero {
   background-color: var(--second-background-color);
   padding-top: 200px;
   padding-bottom: 200px;
 }
 
-.main-title {
+.hero-title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -166,10 +168,10 @@ img {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
-.title-button {
+.hero-button {
   font-weight: bold;
   font-size: 16px;
   line-height: 1.87;
@@ -183,10 +185,12 @@ img {
 
   margin: 0 auto;
   padding: 10px 32px;
+
+  display: flex;
 }
 
-.title-button:focus,
-.title-button:hover {
+.hero-button:focus,
+.hero-button:hover {
   cursor: pointer;
 }
 
@@ -194,6 +198,10 @@ img {
 
 .advantages {
   padding-bottom: 0;
+}
+
+.advantages-item:not(:first-child) {
+  margin-left: 30px;
 }
 
 .advantages-title {
@@ -216,6 +224,10 @@ img {
 
 /* --------------section work------------- */
 
+.work-item:not(:first-child) {
+  margin-left: 30px;
+}
+
 .work-title {
   font-weight: 700;
   font-size: 36px;
@@ -233,14 +245,18 @@ img {
   background-color: #f5f4fa;
 }
 
-.team-item {
+.team-card:not(:first-child) {
+  margin-left: 30px;
+}
+
+.team-card {
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
-.team-main-title {
+.team-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -248,10 +264,10 @@ img {
   color: var(--second-title-color);
   text-align: center;
 
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
-.team-second-title {
+.name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -259,8 +275,8 @@ img {
   letter-spacing: 0.03em;
   color: var(--second-title-color);
 
-  padding-top: 30px;
-  padding-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .team-text {
@@ -270,7 +286,7 @@ img {
   letter-spacing: 0.03em;
   color: var(--main-text-color);
 
-  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 /* --------------footer------------- */
@@ -286,9 +302,12 @@ img {
   color: var(--footer-second-logo-color);
 }
 
+.address {
+  margin-top: 20px;
+}
+
 .address-list {
-  padding-top: 20px;
-  padding-left: 15px;
+  display: block;
 }
 
 .footer-addres-link {
@@ -307,19 +326,23 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-item {
+.footer-item:not(:last-child) {
   margin-bottom: 9px;
 }
 
 /* --------------portfolio------------- */
 
 .filter {
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 
   justify-content: center;
 }
 
-.portfolio-button {
+.filter-item:not(:first-child) {
+  margin-left: 30px;
+}
+
+.filter-button {
   font-family: Roboto;
   font-weight: 500;
   font-size: 16px;
@@ -330,13 +353,13 @@ img {
 
   background: #f5f4fa;
   border-radius: 4px;
+  border: transparent;
 
   padding: 6px 22px;
-  margin-left: 30px;
 }
 
-.portfolio-button:focus,
-.portfolio-button:hover {
+.filter-button:focus,
+.filter-button:hover {
   background-color: var(--accent-button-background-color);
   color: var(--accent-button-text-color);
   cursor: pointer;
@@ -344,10 +367,10 @@ img {
 
 .gallery {
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.gallery-item {
-  margin-left: 30px;
+.gallery-item:nth-last-child(n + 4) {
   margin-bottom: 30px;
 }
 
@@ -366,7 +389,7 @@ img {
   letter-spacing: 0.06em;
   color: var(--second-title-color);
 
-  padding-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 .gallery-text {
